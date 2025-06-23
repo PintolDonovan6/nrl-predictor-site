@@ -2,52 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Free NRL Match Winner Predictor. AI-based predictions using past results, expert analysis, and live odds." />
-  <meta name="keywords" content="NRL, Rugby League, Match Predictor, Sports AI, Footy Tips, Streamlit NRL, Rugby Tips, Who Will Win NRL" />
-  <meta name="author" content="Donovan Pintol" />
-  <meta property="og:title" content="NRL Match Winner Predictor" />
-  <meta property="og:description" content="Get predictions for NRL matches powered by AI and expert analysis." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nrl-predictor-papa.netlify.app" />
-  <meta property="og:image" content="https://your-image-link-if-you-have-one" />
-  <title>NRL Match Predictor | AI-Powered Footy Tips</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NRL Match Predictor | Samting Blo Ples</title>
   <style>
-    <iframe src="https://nrl-ai-predictorgit-r9mpbscpqjawefnqcrpvje.streamlit.app" width="100%" height="800" style="border:none;"></iframe>
+    /* PNG colors: Black (#000000), Red (#D91023), Yellow (#FFD100) */
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #222;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #000000 50%, #D91023 50%);
+      color: #FFD100;
+      padding: 1.5rem;
       text-align: center;
-      padding: 50px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      letter-spacing: 1.5px;
     }
-    h1 {
-      color: #002b5c;
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px #333;
     }
-    p {
-      font-size: 18px;
-      color: #333;
+    header p {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #FFD100cc;
+      text-shadow: 1px 1px 1px #222;
     }
-    a {
-      display: inline-block;
-      padding: 15px 25px;
-      margin-top: 30px;
-      font-size: 18px;
-      color: #fff;
-      background-color: #002b5c;
-      text-decoration: none;
-      border-radius: 8px;
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: white;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+      border-radius: 10px;
     }
-    a:hover {
-      background-color: #0055a5;
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      border-radius: 0 0 10px 10px;
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #555;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🏉 NRL Match Winner Predictor</h1>
-  <p>Get free predictions for upcoming NRL matches — powered by AI, expert analysis, and real stats.</p>
-  <a href="https://nrl-ai-predictorgit-r9mpbscpqjawefnqcrpvje.streamlit.app" target="_blank">
-    Launch Predictor
-  </a>
+
+  <header>
+    <h1>NRL Match Predictor</h1>
+    <p>Samting Blo Ples — AI-Powered Predictions with Expert Analysis & Live Stats</p>
+  </header>
+
+  <main>
+    <iframe src="https://nrl-ai-predictorgit-r9mpbscpqjawefnqcrpvje.streamlit.app" title="NRL Predictor"></iframe>
+  </main>
+
+  <footer>
+    &copy; 2025 Donovan Pintol — Powered by Streamlit & AI
+  </footer>
+
 </body>
 </html>
