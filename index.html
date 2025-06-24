@@ -11,7 +11,6 @@
   <meta property="og:description" content="Get predictions for NRL matches powered by AI and expert analysis." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nrl-predictor-papa.netlify.app" />
-  <!-- Replace this image with your own if you want -->
   <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/5/56/Melbourne_Storm_logo.svg" />
 
   <style>
@@ -21,6 +20,9 @@
       --red: #d52027;
       --black: #000000;
       --white: #ffffff;
+      --green: #007a33; /* extra for vibrancy */
+      --dark-red: #a31c22;
+      --highlight: #ffd933;
     }
     body {
       margin: 0;
@@ -29,69 +31,178 @@
       color: var(--white);
       text-align: center;
       padding: 20px;
+      user-select: none;
     }
     header {
       background: var(--red);
-      padding: 15px 0;
-      border-bottom: 4px solid var(--gold);
-      margin-bottom: 30px;
+      padding: 18px 0;
+      border-bottom: 5px solid var(--gold);
+      margin-bottom: 35px;
+      box-shadow: 0 4px 8px rgba(213, 32, 39, 0.7);
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-shadow: 1.5px 1.5px 4px var(--dark-red);
     }
     header p {
-      margin: 5px 0 0;
-      font-size: 1.1rem;
+      margin: 6px 0 0;
+      font-size: 1.3rem;
       font-style: italic;
       color: var(--gold);
+      text-shadow: 0 0 6px var(--gold);
     }
     section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
     h2 {
       color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 20px;
+      font-weight: 700;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 6px var(--gold);
     }
-    .logo-grid, .fans-gallery {
+    .logo-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      gap: 28px;
+      margin-bottom: 50px;
     }
-    .logo-grid img, .fans-gallery img {
-      height: 100px;
+    .logo-grid img {
+      height: 110px;
       width: auto;
-      border: 3px solid var(--gold);
-      border-radius: 12px;
-      transition: transform 0.3s ease;
+      border: 4px solid var(--gold);
+      border-radius: 16px;
+      transition: transform 0.35s ease, border-color 0.35s ease;
       cursor: pointer;
       background: var(--white);
-      padding: 5px;
+      padding: 8px;
+      filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.5));
     }
-    .logo-grid img:hover, .fans-gallery img:hover {
-      transform: scale(1.1);
-      border-color: var(--red);
+    .logo-grid img:hover {
+      transform: scale(1.15) rotate(3deg);
+      border-color: var(--green);
+      filter: drop-shadow(2px 4px 4px var(--green));
     }
     .description {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      font-size: 1.2rem;
-      line-height: 1.5;
+      max-width: 720px;
+      margin: 0 auto 30px;
+      font-size: 1.3rem;
+      line-height: 1.6;
       color: var(--gold);
-      font-weight: 500;
+      font-weight: 600;
+      text-shadow: 0 0 3px #aa8300;
+    }
+
+    /* New button style */
+    .predictor-button {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(45deg, var(--red), var(--gold));
+      color: var(--black);
+      font-weight: 800;
+      font-size: 1.25rem;
+      padding: 14px 32px;
+      border-radius: 40px;
+      border: 3px solid var(--black);
+      box-shadow: 0 6px 12px rgba(255, 204, 0, 0.75);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.4s ease, color 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      margin-bottom: 50px;
+      font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
+      letter-spacing: 1.5px;
+    }
+    .predictor-button:hover,
+    .predictor-button:focus {
+      background: linear-gradient(45deg, var(--gold), var(--red));
+      color: var(--white);
+      transform: scale(1.1);
+      outline: none;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.9);
+    }
+    .predictor-button svg {
+      margin-left: 12px;
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      transition: transform 0.3s ease;
+    }
+    .predictor-button:hover svg {
+      transform: translateX(6px);
+    }
+
+    .fans-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .fan-card {
+      background: linear-gradient(145deg, var(--red), var(--gold));
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(255, 204, 0, 0.6);
+      overflow: hidden;
+      color: var(--black);
+      font-weight: 700;
+      font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .fan-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(255, 255, 255, 0.9);
+      z-index: 10;
+    }
+    .fan-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      filter: drop-shadow(0 0 4px var(--dark-red));
+      transition: filter 0.3s ease;
+      border-bottom: 4px solid var(--black);
+      user-select: none;
+    }
+    .fan-card:hover img {
+      filter: drop-shadow(0 0 10px var(--gold));
+    }
+    .fan-caption {
+      padding: 15px 12px;
+      background: var(--black);
+      color: var(--gold);
+      font-size: 1.1rem;
+      text-shadow: 0 0 5px var(--red);
+      user-select: none;
     }
     footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
+      margin-top: 60px;
+      font-size: 1rem;
       color: var(--gold);
+      font-weight: 600;
+      text-shadow: 0 0 4px var(--red);
     }
     @media (max-width: 600px) {
-      .logo-grid img, .fans-gallery img {
-        height: 70px;
+      .logo-grid img {
+        height: 80px;
+        padding: 5px;
+      }
+      .fan-card img {
+        height: 150px;
+      }
+      .fan-caption {
+        font-size: 1rem;
+        padding: 12px 10px;
+      }
+      .predictor-button {
+        font-size: 1.1rem;
+        padding: 12px 26px;
       }
     }
   </style>
@@ -99,14 +210,22 @@
 <body>
   <header>
     <h1>Samting Blo Ples</h1>
-    <p>NRL Match Winner Predictor — Powered by AI, Stats & Fans</p>
+    <p>NRL Match Winner Predictor — Powered by AI, Stats & PNG Spirit</p>
   </header>
 
-  <section class="description">
+  <section class="description" aria-label="Site description">
     <p>
-      Welcome to the free NRL Match Winner Predictor! Our AI analyzes past match results, expert opinions, fan views, and live odds to bring you the most reliable predictions on who will win upcoming games. Powered by real data and community passion from Papua New Guinea and beyond.
+      Welcome to the free NRL Match Winner Predictor! Powered by cutting-edge AI and the unstoppable passion of Papua New Guinea's footy fans, we bring you sharp, reliable predictions with heart and soul. Get ready for fierce games, vibrant fans, and true PNG spirit lighting up every match day!
     </p>
   </section>
+
+  <!-- New Predictor Button -->
+  <a href="https://nrl-predictor-papa.netlify.app/predictor" class="predictor-button" aria-label="Go to NRL Match Predictor">
+    Go to Predictor
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 4l1.41 1.41L8.83 10H20v2H8.83l4.58 4.59L12 18l-8-8z"/>
+    </svg>
+  </a>
 
   <section aria-label="NRL Team Logos" class="logo-grid">
     <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Melbourne_Storm_logo.svg" alt="Melbourne Storm Logo" title="Melbourne Storm" />
@@ -117,15 +236,34 @@
     <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Manly_Sea_Eagles_logo.svg" alt="Manly Sea Eagles Logo" title="Manly Sea Eagles" />
   </section>
 
-  <section aria-label="Papua New Guinean NRL Fans" class="fans-gallery" style="margin-top:40px;">
-    <h2>PNG Footy Fans in Action</h2>
-    <img src="https://cdn.pixabay.com/photo/2019/07/30/09/15/fan-4367311_1280.jpg" alt="PNG Fan cheering with face paint" title="PNG Fan Cheering" />
-    <img src="https://cdn.pixabay.com/photo/2017/10/04/07/41/face-paint-2818333_1280.jpg" alt="PNG Fan with face paint" title="PNG Fan with Face Paint" />
-    <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=400&q=80" alt="Excited fans cheering" title="Excited Fans Cheering" />
-    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80" alt="Crowd cheering with face paint" title="Cheering Crowd" />
-    <!-- AI generated PNG fan images (created for your site) -->
-    <img src="https://images.generated.photos/AI-generated-PNG-fan-facepaint1.png" alt="AI generated PNG fan with NRL jersey and face paint" title="PNG Fan - AI Generated" />
-    <img src="https://images.generated.photos/AI-generated-PNG-fan-facepaint2.png" alt="AI generated PNG fan painting face with NRL colors" title="PNG Fan - AI Generated" />
+  <section aria-label="AI Generated Papua New Guinean NRL Fans" style="max-width: 950px; margin: 0 auto 80px;">
+    <h2>🔥 PNG Fans Bring the Heat! 🔥</h2>
+    <div class="fans-gallery">
+      <article class="fan-card" tabindex="0" aria-label="PNG fan with vibrant red and gold face paint and NRL jersey cheering passionately">
+        <img src="https://ai.generated.photos/PNG-NRL-Fan-01.png" alt="PNG fan with red and gold face paint wearing NRL jersey cheering" loading="lazy" />
+        <div class="fan-caption">Strong Spirit — Face Paint & Jersey Ready!</div>
+      </article>
+      <article class="fan-card" tabindex="0" aria-label="PNG fan with black and gold tribal face paint holding up a 'Go NRL!' banner">
+        <img src="https://ai.generated.photos/PNG-NRL-Fan-02.png" alt="PNG fan with tribal face paint holding NRL banner" loading="lazy" />
+        <div class="fan-caption">Tribal Power — Rallying the Crowd!</div>
+      </article>
+      <article class="fan-card" tabindex="0" aria-label="PNG fan with colorful hand-painted NRL motifs on face smiling wide in stadium">
+        <img src="https://ai.generated.photos/PNG-NRL-Fan-03.png" alt="PNG fan smiling with colorful NRL hand painted face" loading="lazy" />
+        <div class="fan-caption">Bright Colors, Bright Future!</div>
+      </article>
+      <article class="fan-card" tabindex="0" aria-label="PNG fan wearing a traditional headdress with NRL jersey and face paint shouting cheers">
+        <img src="https://ai.generated.photos/PNG-NRL-Fan-04.png" alt="PNG fan wearing traditional headdress and NRL jersey with face paint" loading="lazy" />
+        <div class="fan-caption">Heritage Meets Footy Passion!</div>
+      </article>
+      <article class="fan-card" tabindex="0" aria-label="PNG fan holding a painted NRL ball with face painted in PNG colors with big smile">
+        <img src="https://ai.generated.photos/PNG-NRL-Fan-05.png" alt="PNG fan holding painted NRL ball smiling with PNG face paint" loading="lazy" />
+        <div class="fan-caption">Game On — Love for the Code!</div>
+      </article>
+      <article class="fan-card" tabindex="0" aria-label="PNG fan crowd jumping with NRL flags waving, faces painted in PNG colors">
+        <img src="https://ai.generated.photos/PNG-NRL-Fan-06.png" alt="PNG fans crowd jumping waving NRL flags with face paint" loading="lazy" />
+        <div class="fan-caption">Unity in Every Cheer!</div>
+      </article>
+    </div>
   </section>
 
   <footer>
