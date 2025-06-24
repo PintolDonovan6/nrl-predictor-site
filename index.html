@@ -3,137 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NRL Match Winner Predictor | Samting Blo Ples</title>
-  <meta name="description" content="Free NRL Match Winner Predictor. AI-based predictions using past results, expert analysis, and live odds." />
-  <meta name="keywords" content="NRL, Rugby League, Match Predictor, Sports AI, Footy Tips, PNG Fans" />
+  <title>NRL Match Predictor | Samting Blo Ples</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Free NRL Match Winner Predictor. AI-powered predictions using past results, expert analysis, and fan opinions." />
+  <meta name="keywords" content="NRL, Rugby League, Match Predictor, Papua New Guinea, Sports AI, Footy Tips" />
   <meta name="author" content="Donovan Pintol" />
+
+  <!-- PNG colors theme -->
   <style>
     body {
       margin: 0; 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000000;
-      color: #ffd100;
-      line-height: 1.6;
+      background: #000; /* Black background */
+      color: #FFD100; /* Gold text */
     }
     header {
-      background: #007a3d; /* PNG Green */
-      color: #ffd100; /* PNG Yellow */
-      padding: 30px 20px;
+      background: #E60000; /* PNG red */
+      padding: 20px 40px;
       text-align: center;
-      border-bottom: 5px solid #d52b1e; /* PNG Red */
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
+      color: white;
+      font-weight: 700;
+      font-size: 2.5rem;
       letter-spacing: 2px;
       text-transform: uppercase;
+      font-family: 'Arial Black', sans-serif;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.7);
     }
     main {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
     }
-    section {
-      background: #007a3d;
-      padding: 25px 30px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-    }
-    section h2 {
-      color: #ffd100;
-      margin-bottom: 15px;
-      font-size: 2rem;
+    h1, h2 {
+      color: #FFD100;
+      font-weight: 800;
+      margin-bottom: 10px;
       text-align: center;
-      letter-spacing: 1.2px;
       text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
-    section p, section ul {
-      font-size: 1.1rem;
+    p.description {
       color: #fff;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    section ul {
-      padding-left: 20px;
-      margin-top: 10px;
+    .button-container {
+      text-align: center;
+      margin-bottom: 50px;
     }
-    section ul li {
-      margin-bottom: 8px;
+    .btn-predict {
+      background-color: #FFD100; /* Gold */
+      color: #000000; /* Black */
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 209, 0, 0.7);
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
     }
-    .images-row {
+    .btn-predict:hover {
+      background-color: #e6c800;
+    }
+    /* Image gallery */
+    .gallery {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
+      margin-bottom: 50px;
     }
-    .images-row img {
+    .gallery img {
+      border-radius: 15px;
       max-width: 260px;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
       transition: transform 0.3s ease;
-      cursor: pointer;
-      object-fit: cover;
-      height: 160px;
     }
-    .images-row img:hover {
+    .gallery img:hover {
       transform: scale(1.05);
     }
     footer {
-      background: #d52b1e;
-      color: #fff;
+      background: #E60000;
+      color: white;
       text-align: center;
-      padding: 15px 20px;
-      font-size: 1rem;
-      font-weight: 600;
+      padding: 15px;
+      font-size: 0.9rem;
       letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-top: 40px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-weight: 600;
+      box-shadow: 0 -4px 8px rgba(0,0,0,0.7);
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Samting Blo Ples - NRL Predictor</h1>
+    SAMTING BLO PLES - NRL MATCH PREDICTOR
   </header>
 
   <main>
-    <section>
-      <h2>Welcome to Your Free NRL Match Winner Predictor</h2>
-      <p>
-        This powerful tool combines <strong>historical match data</strong>, <strong>expert analysis</strong>, <strong>fan opinions</strong>, and <strong>live betting odds</strong> to give you the smartest predictions on upcoming NRL matches.
-      </p>
-      <p>
-        Whether you’re a die-hard fan or just love the game, our AI-powered predictor helps you see which team is most likely to win, based on thorough research and real-time insights.
-      </p>
-      <ul>
-        <li>Data-driven statistics from past NRL seasons</li>
-        <li>Tips and analysis from professional sports analysts</li>
-        <li>Social buzz and fan sentiment from Papua New Guinea and worldwide</li>
-        <li>Live odds from sportsbooks updated constantly</li>
+    <h1>Welcome to the NRL Match Winner Predictor</h1>
+    <p class="description">
+      This AI-powered predictor gives you NRL match predictions based on:
+      <ul style="max-width: 600px; margin: 15px auto 30px auto; text-align:left;">
+        <li>Historical match stats and results</li>
+        <li>Expert analysis and professional opinions</li>
+        <li>Fan predictions and popular consensus</li>
+        <li>Live odds and current team form</li>
       </ul>
-    </section>
+      All combined to help you know who is likely to win the next big match.
+    </p>
 
-    <section>
-      <h2>NRL Action and PNG Fan Spirit</h2>
-      <div class="images-row">
-        <!-- Official NRL Logo -->
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/74/NRL_Logo_2020.svg/320px-NRL_Logo_2020.svg.png" alt="NRL Logo" title="NRL Official Logo" />
+    <div class="button-container">
+      <a href="https://nrl-ai-predictorgit-r9mpbscpqjawefnqcrpvje.streamlit.app/" target="_blank" class="btn-predict">
+        Open NRL Predictor
+      </a>
+    </div>
 
-        <!-- PNG Rugby League Fans cheering -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Rugby_league_fans_in_Port_Moresby%2C_PNG_-_2018.jpg" alt="Papua New Guinea Rugby League Fans" title="PNG Rugby League Fans" />
-
-        <!-- NRL Game Action -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/NRL_Game_2023_-_Action_Shot.jpg" alt="NRL Game Action" title="NRL Game Action" />
-      </div>
-    </section>
+    <h2>NRL Action & PNG Fans</h2>
+    <div class="gallery">
+      <!-- Real NRL team logos -->
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Melbourne_Storm_logo.svg/1200px-Melbourne_Storm_logo.svg.png" alt="Melbourne Storm Logo" />
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Penrith_Panthers_NRL_Logo.svg/1200px-Penrith_Panthers_NRL_Logo.svg.png" alt="Penrith Panthers Logo" />
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Sydney_Roosters_Logo.svg/1200px-Sydney_Roosters_Logo.svg.png" alt="Sydney Roosters Logo" />
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Brisbane_Broncos_logo.svg/1200px-Brisbane_Broncos_logo.svg.png" alt="Brisbane Broncos Logo" />
+      
+      <!-- PNG fans cheering -->
+      <img src="https://cdn.pixabay.com/photo/2019/08/07/13/29/rugby-4381086_960_720.jpg" alt="PNG Rugby Fans" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Papua_New_Guinea_fans_2017.jpg" alt="PNG Fans Cheering" />
+    </div>
   </main>
 
   <footer>
-    © 2025 Donovan Pintol | Samting Blo Ples
+    © 2025 Donovan Pintol | Powered by Samting Blo Ples
   </footer>
-
 </body>
 </html>
