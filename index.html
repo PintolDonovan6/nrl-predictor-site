@@ -4,47 +4,127 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NRL Match Predictor | AI-Powered Footy Tips</title>
-
   <meta name="description" content="Free NRL Match Winner Predictor. AI-based predictions using past results, expert analysis, and live odds." />
   <meta name="keywords" content="NRL, Rugby League, Match Predictor, Sports AI, Footy Tips, Streamlit NRL, Rugby Tips, Who Will Win NRL" />
   <meta name="author" content="Donovan Pintol" />
-
   <meta property="og:title" content="NRL Match Winner Predictor" />
   <meta property="og:description" content="Get predictions for NRL matches powered by AI and expert analysis." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nrl-predictor-papa.netlify.app" />
-  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Melbourne_Storm_logo.svg/200px-Melbourne_Storm_logo.svg.png" />
+  <!-- Replace this image with your own if you want -->
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/5/56/Melbourne_Storm_logo.svg" />
 
   <style>
-    /* PNG Colors Background Gradient */
+    /* PNG Colors */
+    :root {
+      --gold: #ffcc00;
+      --red: #d52027;
+      --black: #000000;
+      --white: #ffffff;
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #FFD100, #E03C31, #000000);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header {
-      width: 100%;
-      background-color: rgba(0,0,0,0.6);
-      padding: 20px 0;
+      background: var(--black);
+      color: var(--white);
       text-align: center;
-      box-shadow: 0 3px 10px #000;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      padding: 20px;
     }
-
+    header {
+      background: var(--red);
+      padding: 15px 0;
+      border-bottom: 4px solid var(--gold);
+      margin-bottom: 30px;
+    }
     header h1 {
       margin: 0;
-      font-size: 2.6rem;
+      font-size: 2.5rem;
+      font-weight: 700;
       letter-spacing: 2px;
-      text-shadow: 2px 2px 5px #000000cc;
     }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--gold);
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .logo-grid, .fans-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+    .logo-grid img, .fans-gallery img {
+      height: 100px;
+      width: auto;
+      border: 3px solid var(--gold);
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      background: var(--white);
+      padding: 5px;
+    }
+    .logo-grid img:hover, .fans-gallery img:hover {
+      transform: scale(1.1);
+      border-color: var(--red);
+    }
+    .description {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: var(--gold);
+    }
+    @media (max-width: 600px) {
+      .logo-grid img, .fans-gallery img {
+        height: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Samting Blo Ples</h1>
+    <p>NRL Match Winner Predictor — Powered by AI, Stats & Fans</p>
+  </header>
 
-    main {
-      max-wid
+  <section class="description">
+    <p>
+      Welcome to the free NRL Match Winner Predictor! Our AI analyzes past match results, expert opinions, fan views, and live odds to bring you the most reliable predictions on who will win upcoming games. Powered by real data and community passion from Papua New Guinea and beyond.
+    </p>
+  </section>
+
+  <section aria-label="NRL Team Logos" class="logo-grid">
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Melbourne_Storm_logo.svg" alt="Melbourne Storm Logo" title="Melbourne Storm" />
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/Penrith_Panthers_logo.svg" alt="Penrith Panthers Logo" title="Penrith Panthers" />
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/66/Sydney_Roosters_logo.svg" alt="Sydney Roosters Logo" title="Sydney Roosters" />
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/74/Brisbane_Broncos_logo.svg" alt="Brisbane Broncos Logo" title="Brisbane Broncos" />
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/6f/Canberra_Raiders_logo_2019.svg" alt="Canberra Raiders Logo" title="Canberra Raiders" />
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Manly_Sea_Eagles_logo.svg" alt="Manly Sea Eagles Logo" title="Manly Sea Eagles" />
+  </section>
+
+  <section aria-label="Papua New Guinean NRL Fans" class="fans-gallery">
+    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" alt="NRL Fans cheering" title="NRL Fans Cheering" />
+    <img src="https://images.unsplash.com/photo-1526947425960-945c6e7286d9?auto=format&fit=crop&w=400&q=80" alt="Rugby fans cheering" title="Rugby Fans Cheering" />
+    <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=80" alt="Cheering crowd" title="Cheering Crowd" />
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Donovan Pintol | Powered by AI & Papua New Guinean Spirit</p>
+  </footer>
+</body>
+</html>
